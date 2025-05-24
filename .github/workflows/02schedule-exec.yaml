@@ -1,0 +1,32 @@
+# CI de nível 2 - Execução Agendada
+
+name: 'Execução Agendada'
+
+on:
+  schedule:
+    - cron: '0 6 * * 0'
+
+jobs:
+  e2e-testes:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Instala Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+
+      - name: Instalando Yarn
+        run: npm install -g yarn
+
+      - name: Instalando dependências
+        run: yarn
+
+      - name: Instalando o Playwright
+        run: yarn playwright install
+
+      - name: Executando Testes E2E
+        run: yarn e2e
