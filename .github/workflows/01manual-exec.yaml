@@ -1,4 +1,4 @@
-# CI de Nível 01 - Disparo manual a partir de 1 clique
+# CI de Nível 01 - Disparo manual a partir de 1(um) clique
 
 # nome do nosso 'pipeline'
 name: 'Execução Manual'
