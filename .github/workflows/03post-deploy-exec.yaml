@@ -1,12 +1,12 @@
 # CI de nível 3 - Disparo após conclusão de uma pipeline
 name: 'Execução por Deploy'
 
-# regras para disparo 
+# regras para disparo
 # gatilho a partir de outro pipe = workflow_run
 
 on:
   workflow_run:
-    workflows:  ['Execução Manual']
+    workflows: ['Execução Manual']
     types:
       - completed
 
