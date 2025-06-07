@@ -1,0 +1,40 @@
+# CI de nível 4 - disparo dos testes dentro do pipe de dev
+
+name: 'Execução Integrada'
+
+on:
+  workflow_dispatch:
+
+jobs:
+  inspecao:
+    runs-on:  ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: instalando Yarn
+        run: npm install -g yarn
+
+      - name: Instalando dependências
+        run:  yarn
+
+      - name: Checando padronização do código
+        run:  yarn lint
+
+  unidade:
+    runs-on:  ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+
+
+  e2e-tests:
+    runs-on:  ubuntu-latest
+
+  deploy:
+    runs-on:  ubuntu-latest
+
+    steps:
+      - name: Simulação do deploy
+        run:  echo 'Simulando deploy'
