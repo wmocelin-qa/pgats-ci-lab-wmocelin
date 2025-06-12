@@ -1,5 +1,5 @@
 pipeline {
-    // Usando uma imagem Docker compatível com sua versão do Playwright
+    // Usando uma imagem Docker compatível com sua versão do Playwrightt
     agent {
         docker {
             image 'mcr.microsoft.com/playwright/javascript:v1.47.0-jammy'
